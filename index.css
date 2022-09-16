@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :root{
-    --bg-color: #141414;
+    --bg-color: #000;
     --text-light-color: #ffffff;
     --text-dark-color: #2b2b2b;
     --white: #ffffff;
@@ -12,50 +12,129 @@
     box-sizing: border-box;
     margin: 0;  
     padding:0;
-    font-family: sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+/* navigation */
+
+.logo-and-bttn{
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+/* .logo{
+    width: 100px;
+    height:  45px;
+} */
+
+.logo-bttn{
+    background-color: var(--netflix-red);
+    color: var(--white);
+    border: none;
+    border-radius: 2px;
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
 /* main section on landing page with content  */
 .main-section{
     background-color: var(--bg-color);
-    background-image: url(/Images/main-bg.jpg);
+    /* background-image: url(/Images/main-bg.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
-    text-align: center;
     color: var(--white);
-    padding: 5%;
-}
-
-.logo-and-bttn{
-    display: flex;
-    justify-content: space-between;
-
-}
-.logo{
-
-}
-.logo-bttn{
-
+    padding: 40px;
 }
 
 .main-content{
-
+    padding: 40px;
 }
 
 .main-h1{
-
+    font-size: 50px;
+    color: var(--text-light-color);
+    font-weight: 800;
 }
 .main-h2{
-
+    margin-top: 10px;
+    font-size: 30px;
+    color: var(--text-light-color);
+    font-weight: 400;
 }
 .main-h3{
-
+    margin-top: 10px;
+    font-size: 18px;
+    color: var(--text-light-color);
+    
 } 
-.main-input{
 
+.bttn-input{
+    display: inline;
+}
+
+.main-input{
+    margin:0;
+    height: 55px;
+    width: 400px;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    background-color: var(--white);
+    text-align: left;
 }
 .sub-button{
-
+    background-color: var(--netflix-red);
+    color: var(--white);
+    border: none;
+    border-radius: 2px;
+    padding: 16px 20px;
+    font-size: 22px;
+    margin-top: 15px;
+}
+ span{
+    background-color: var(--netflix-red);
+    margin-left: 4px;
+ }
+.divider{
+    height: 5px;
+    width: 100vw;
+    background-color: #2b2b2b;
 }
 
+/* section number 2 */
+.content-div{
+    padding: 25x;
+}
+
+.image-showcase{
+    /* height: 300px;
+    width: 250px; */
+    /* flex-grow: 1; */
+}
+.section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding: 45px;
+}
+
+.FAQ-section{
+    margin: 25px;
+    padding: 25px;
+}
+
+/* footer section */
+.footer-section {
+    padding: auto;
+    margin: 25px;
+    padding: 25px;
+}
+
+.footer-text{
+    color:var(--text-dark-color);
+    text-align: none;
+}
