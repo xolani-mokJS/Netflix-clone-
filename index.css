@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root{
+    --bg-color: #141414;
+    --text-light-color: #ffffff;
+    --text-dark-color: #2b2b2b;
+    --white: #ffffff;
+    --netflix-red: #E50914;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;  
+    padding:0;
+    font-family: sans-serif;
+}
+
+/* main section on landing page with content  */
+.main-section{
+    background-color: var(--bg-color);
+    background-image: url(/Images/main-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    color: var(--white);
+    padding: 5%;
+}
+
+.logo-and-bttn{
+    display: flex;
+    justify-content: space-between;
+
+}
+.logo{
+
+}
+.logo-bttn{
+
+}
+
+.main-content{
+
+}
+
+.main-h1{
+
+}
+.main-h2{
+
+}
+.main-h3{
+
+} 
+.main-input{
+
+}
+.sub-button{
+
+}
+
