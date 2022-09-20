@@ -15,18 +15,20 @@
 </head>
 <body>
     <!-- main section on landing page with content -->
-    <section class="main-section">
+    <section class="main-section login-section">
         <!-- nav/ top navigation -->
         <nav class="logo-and-bttn">
             <img class="logo" src="/Images/Logo with text.png">
             <!-- <button class="logo-bttn">Sign In</button> -->
         </nav>
         <div class="form-section">
-            <form class="login-form">
+            <form id="login-form" class="login-form">
                 <div class="main-h1 form-header">Sign In</div>
-                <input class="login-input" placeholder="Email or Phone number" type="text" name="login-input" id="">
-                <input class="login-input" placeholder="Password" type="password" name="login-password" id="">
-                <button class="login-bttn" type="submit"> Sign In</button>
+                
+                <input id="login-email" class="login-input" placeholder="Email or Phone number" type="text" name="login-input" id="">
+                <input id="login-password" class="login-input" placeholder="Password" type="password" name="login-password" id="">
+                <button class="login-bttn" type="submit"> Sign In </button>
+                <div id="error"></div>
                 <div class="sign-in-check">
                     <input type="checkbox" value="Remember Me?" name="Remember-me" id="">
                     <label for="remember-me"> Remember me?</label>

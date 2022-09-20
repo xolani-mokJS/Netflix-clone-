@@ -26,9 +26,6 @@ body{
     display: flex;
     justify-content: space-between;
 }
-.logo{
-    width: 90px;
-}
 
 .logo-bttn{
     background-color: var(--netflix-red);
@@ -47,6 +44,7 @@ body{
     background-repeat: no-repeat;
     color: var(--white);
     padding: 20px;
+    height: 100vh;
 }
 
 .main-content{
@@ -174,6 +172,9 @@ body{
 }
 
 /* login page  */
+.login-section {
+    height: 100vh;
+}
 
 .form-section {
     display: flex;
@@ -210,6 +211,11 @@ body{
     border-radius: 5px;
 }
 
+#error{
+    text-align: left;
+    color: var(--netflix-red);
+}
+
 .sign-in-check{
   text-align: left;
   margin:10px;
@@ -222,6 +228,13 @@ body{
 
 p{
     font-size: 14px;
+}
+
+/* 404 */
+.page-n-f{
+    font-size: 80px;
+    color: var(--netflix-red);
+    text-align: center;
 }
 
 /* responsiveness */
