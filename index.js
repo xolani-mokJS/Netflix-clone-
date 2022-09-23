@@ -21,7 +21,7 @@ form.addEventListener('submit', function(e) {
     document.getElementById('error').innerText = 'Invalid username or password.';
    } else{
     document.getElementById('error').innerText = '';
-    window.location.href = '/page.html';
+    window.location.href = '/pages/page.html';
    }
 
    localStorage.setItem('userInfo', JSON.stringify(userInfo));
