@@ -18,6 +18,7 @@
 body{
     /* background-color: var(--bg-color)!important; */
     text-align: center;
+    background-color: #141414;
 }
 
 li{
@@ -35,6 +36,7 @@ li{
 .logo{
     cursor: pointer;
     height: fit-content;
+    margin-right: 20px;
 }
 
 .nav-item{
@@ -256,15 +258,12 @@ p{
     font-size: 14px;
 }
 
-/* 404 */
-.page-n-f{
-    font-size: 80px;
-    color: var(--netflix-red);
-    text-align: center;
-}
 
 /* home page styling */
-
+.main-content{
+    color: var(--text-light-color);
+    text-align: left;
+}
 .home-landing-content{
     text-align: left !important;
 }
@@ -382,11 +381,6 @@ p{
 
 /* components styling, will be removed later and stored into components */
 
-.main-content{
-    color: var(--text-light-color);
-    background-color: var(--bg-color);
-    text-align: left;
-}
 
 /* movie list */
 .movie-list{
@@ -427,7 +421,7 @@ p{
     left: -20%;
     width: 150%;
     height: 215%;
-    background: #202020;
+    background: var(--bg-color);
     color: white;
     border-radius: 4px;
 }

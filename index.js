@@ -3,7 +3,7 @@ const signUpForm = document.getElementById('sign-up-form');
 
 form.addEventListener('submit', (f)=>{
     f.preventDefault();
-    window.location.href = '\pages\login.html';
+    window.location.href = '/pages/login.html';
 });
     
 signUpForm.addEventListener('submit', (e)=>{
@@ -21,7 +21,7 @@ signUpForm.addEventListener('submit', (e)=>{
     document.getElementById('error').innerText = 'Invalid username or password.';
    } else{
     document.getElementById('error').innerText = '';
-    window.location.href = '/pages/page.html';
+    window.location.href = '/pages/Home.html';
    }
 
    localStorage.setItem('userInfo', JSON.stringify(userInfo));
