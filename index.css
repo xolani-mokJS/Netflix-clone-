@@ -30,6 +30,7 @@ body{
 
 .logo{
     cursor: pointer;
+    height: fit-content;
 }
 
 .nav-item{
