@@ -4,12 +4,21 @@ import {
     css,
 } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 
-class moviePreview extends LitElement {
+/**
+ * @element movie-preview - Show a single movie as a preview card
+ * @prop {string | null} image - The preview image to show for the movie
+ * @attr image
+ * 
+ * @prop {string | null} label - The name of the movie to preview
+ * @attr label
+ * 
+ */
+
+class Component extends LitElement {
     static get properties() {
         return {
             label: { type: String },
             image: { type: String },
-            wishlisted: { type: Boolean },
         }
     }
 
@@ -85,7 +94,7 @@ class moviePreview extends LitElement {
                 <div class="movie-preview">
                     <div class="show-cover">
                         <div class="hidden-items">
-                            <img class="image" src="/Images/queens-gambit.png" alt="">
+                            <img class="image" src="./Images/queens-gambit.png" alt="">
                             <p class="movie-name"> Movie Name</p>
                             <div class="hidden-buttons">
                                 <button class="buttons-hidden">play</button>
@@ -102,4 +111,4 @@ class moviePreview extends LitElement {
 
 };
 
-customElements.define('movie-preview',moviePreview);
+customElements.define('movie-preview',Component);

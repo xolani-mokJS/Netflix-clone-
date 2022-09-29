@@ -17,16 +17,17 @@ class Component extends LitElement {
 
     render() {
         return html`
-            <movie-list .movies=${this.movies} label=''>
-            <movie-preview></movie-preview>
-            </movie-list>
+            <movie-list .movies=${this.movies} label=''></movie-list>
         `
     }
+
 
     connectedCallback() {
         super.connectedCallback();
 
         const init = async () => {
+
+            /** @type {{ data: import('./types').movie[] }} */
             const response = await fetch('https://project-apis.codespace.co.za/api/movies')
             const { data } = await response.json()
 

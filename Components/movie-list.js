@@ -4,8 +4,7 @@ import {
     css,
 } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 
-class movieList extends LitElement {
-
+class Component extends LitElement {
     static get properties() {
         return {
             label: { type: String },
@@ -31,22 +30,18 @@ class movieList extends LitElement {
 
     render() {
         return html`
-        
         <h2 class="cat-title"> ${this.label} </h2>
             <ul class="category">
                 ${this.movies.map(({ name, image }) => {
                     return html`
                         <li>
-                            <div>${name} ${image}</div>
+                            <movie-preview></movie-preview>
                         </li>`
                 })}
             </ul>
-        
         `
-
-    };
-        
+    };     
 }
 
 
-customElements.define('movie-list',movieList);
+customElements.define('movie-list',Component);
