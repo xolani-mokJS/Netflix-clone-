@@ -420,7 +420,7 @@ p{
     left: -20%;
     width: 150%;
     height: 215%;
-    background: var(--bg-color);
+    background: #141414;
     color: white;
     border-radius: 4px;
 }

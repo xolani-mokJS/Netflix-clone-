@@ -34,9 +34,12 @@ class movieList extends LitElement {
         
         <h2 class="cat-title"> ${this.label} </h2>
             <ul class="category">
-                <li>
-                    <movie-preview></movie-preview>
-                </li>
+                ${this.movies.map(({ name, image }) => {
+                    return html`
+                        <li>
+                            <div>${name} ${image}</div>
+                        </li>`
+                })}
             </ul>
         
         `

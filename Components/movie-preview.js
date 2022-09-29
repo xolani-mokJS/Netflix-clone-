@@ -82,7 +82,6 @@ class moviePreview extends LitElement {
 
     render() {
         return html`
-
                 <div class="movie-preview">
                     <div class="show-cover">
                         <div class="hidden-items">
