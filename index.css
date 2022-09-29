@@ -77,6 +77,7 @@ li{
 
 .main-content{
     padding: 40px;
+    
 }
 
 .main-h1{
@@ -380,24 +381,24 @@ p{
 }
 
 /* components styling, will be removed later and stored into components */
-
-
 /* movie list */
 .movie-list{
-  margin-left: 40px;
-}
-
-
-.cat-title{
-    margin: 15px;
-}
-
-.category{
-    display: flex;
-    flex-direction: row;
-}
+    margin-left: 40px;
+  }
+  
+  
+  .cat-title{
+      margin: 15px;
+  }
+  
+  .category{
+      display: flex;
+      flex-direction: row;
+  }
 
 /* movie preview styles from here */
+
+
 .movie-preview{
     margin: 5px;
     display: flex;
