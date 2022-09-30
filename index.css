@@ -404,7 +404,7 @@ p{
     color: var(--white);
 }
 .show-cover{
-    background-image: url(/Images/queens-gambit.png);
+    /* background-image: url(/Images/queens-gambit.png); */
     background-size: cover;
     width: 240px;
     height: 140px;

@@ -84,18 +84,21 @@ class Component extends LitElement {
     
     .buttons-hidden:hover{
         opacity: 0.9;
-    }
-    
-      
-    `
+    }`
+
 
     render() {
+
+        const background = {
+            backgroundImg: `url(${this.image})`,
+        }
+
         return html`
-                <div class="movie-preview">
+            <div class="movie-preview" style="${styleMap(backgroundStyle)}">
                     <div class="show-cover">
                         <div class="hidden-items">
-                            <img class="image" src="./Images/queens-gambit.png" alt="">
-                            <p class="movie-name"> Movie Name</p>
+                            <img class="image" src="${this.image}" alt="">
+                            <p class="movie-name">${this.label}</p>
                             <div class="hidden-buttons">
                                 <button class="buttons-hidden">play</button>
                                 <button class="buttons-hidden">Add to list</button>

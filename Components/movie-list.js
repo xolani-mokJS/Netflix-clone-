@@ -5,6 +5,11 @@ import {
 } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 
 class Component extends LitElement {
+
+    constructor() {
+        super()
+    }
+
     static get properties() {
         return {
             label: { type: String },
@@ -35,7 +40,7 @@ class Component extends LitElement {
                 ${this.movies.map(({ name, image }) => {
                     return html`
                         <li>
-                            <movie-preview></movie-preview>
+                            <movie-preview  image="${image}" label="${name}"></movie-preview>
                         </li>`
                 })}
             </ul>
