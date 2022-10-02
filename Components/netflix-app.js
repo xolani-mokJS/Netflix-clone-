@@ -24,6 +24,7 @@ class Component extends LitElement {
             <movies-list .movies=${this.movies} label="Whats new"></movies-list>
             <movies-list .movies=${this.movies} label="Movies"></movies-list>
             <movies-list .movies=${this.movies} label="TV series"></movies-list>
+            <movies-list .movies=${this.movies} label="Oldies but Goodies"></movies-list>
         `
     }
 
@@ -36,7 +37,7 @@ class Component extends LitElement {
             /** @type {{ data: import('./types').movie[] }} */
             const { data } = await response.json()
 
-            this.movies = data.slice(0, 30)
+            this.movies = data.slice(0, 10)
             this.phase = 'resting'
         }
             

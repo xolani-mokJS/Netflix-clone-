@@ -47,7 +47,7 @@ class MoviesList extends LitElement {
 
     render() {    
         return html`
-        <div class="movie-lit">
+        <div class="movie-list">
             <h2 class="cat-title">${this.label}</h2>
 
             <ul class="category newMovies">
