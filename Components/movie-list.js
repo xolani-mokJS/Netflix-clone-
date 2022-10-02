@@ -18,23 +18,20 @@ class MoviesList extends LitElement {
     }
 
     static styles = css`
-        div {
-            padding: 1rem;
-        }
-
-        h2 {
-            font-family: sans-serif;
-            font-size: 48px;
-        }
-
-        ul {
-            transition: transform 600ms;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            transform: translateX(0px);
-        }
+      
+        .movie-list{
+            margin-left: 40px;
+          }
+          
+          
+          .cat-title{
+              margin: 15px;
+          }
+          
+          .category{
+              display: flex;
+              flex-direction: row;
+          }
     `
 
     next() {
@@ -50,9 +47,10 @@ class MoviesList extends LitElement {
 
     render() {    
         return html`
-            <h2>${this.label}</h2>
+        <div class="movie-lit">
+            <h2 class="cat-title">${this.label}</h2>
 
-            <ul>
+            <ul class="category newMovies">
                 ${this.movies.map(({ name, image }) => {
                     return html`
                         <movie-preview image="${image}" label="${name}"></movie-preview>`
@@ -60,6 +58,7 @@ class MoviesList extends LitElement {
             </ul>
 
             <button @click="${this.next}">NEXT</button>
+        </div>
         `
     }
 }

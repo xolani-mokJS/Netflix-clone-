@@ -28,45 +28,64 @@ class MoviePreview extends LitElement {
     }
 
     static styles = css`
-        .resting {
-            border: 1px solid grey;
-            padding: 1rem;
-            background-color: grey;
+        
+        .show-cover{
+            /* background-image: url(/Images/queens-gambit.png); */
             background-size: cover;
+            width: 240px;
+            height: 140px;
             background-position: center;
             cursor: pointer;
             position: relative;
-            height: 200px;
-            width: 400px;
+            border-radius: 4px;
         }
-
-        .preview {
-            opacity: 0;
+        .hidden-items{
+            display: none;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
+            top: -50%;
+            left: -20%;
+            width: 150%;
+            height: 100px;
+            background: #141414;
             color: white;
-            transform: scale(1);
-            transition: transform 0.3s;
+            border-radius: 4px;
         }
-
-        .resting:hover {
+        
+        .show-cover:hover{
             z-index: 10;
         }
-
-        .resting:hover > .preview {
-            opacity: 1;
-            transform: scale(1.3)
+        
+        .show-cover:hover > .hidden-items {
+            display: block;
         }
-
-        video {
+        
+        .movie-name{
+           font-size: 16px;
+            padding-left: 15px;
+            padding-top: 15px;
+        }
+        
+        .image{
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            border-radius: 4px;
         }
+        
+        .buttons-hidden{
+            margin-left: 10px;
+            color: var(--bg-color);
+            border: none;
+            background-color: #ffffff;
+            padding: 8px 12px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        
+        .buttons-hidden:hover{
+            opacity: 0.9;
+        }
+        
     `
 
     render() {
@@ -75,12 +94,18 @@ class MoviePreview extends LitElement {
         }
 
         return html`
-            <div class="resting" style="${styleMap(backgroundStyle)}">
-                <div class="preview">
-                    <video src="/assets/placeholder.mp4" loop></video>
-                    <span class="label">${this.label}</span>
+        <div class="movie-preview">
+            <div class="resting show-cover" style="${styleMap(backgroundStyle)}">
+                <div class="preview hidden-items">
+                    <img class="image" src="${this.image}" alt="">
+                    <p class="movie-name">${this.label}</p>
+                    <div class="hidden-buttons">
+                        <button class="buttons-hidden">play</button>
+                        <button class="buttons-hidden">Add to list</button>
+                    </div> 
                 </div>
             </div>
+        </div>
         `
     }
 }

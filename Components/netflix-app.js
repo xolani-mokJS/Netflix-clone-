@@ -21,7 +21,9 @@ class Component extends LitElement {
 
     render() {
         return html`
-            <movies-list .movies=${this.movies} label="Horror"></movies-list>
+            <movies-list .movies=${this.movies} label="Whats new"></movies-list>
+            <movies-list .movies=${this.movies} label="Movies"></movies-list>
+            <movies-list .movies=${this.movies} label="TV series"></movies-list>
         `
     }
 
