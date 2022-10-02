@@ -1,11 +1,10 @@
 import {
-    LitElement, 
-    html, 
+    LitElement,
+    html,
     css,
-} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 
-class Component extends LitElement {
-
+class MoviesList extends LitElement {
     constructor() {
         super()
     }
@@ -13,40 +12,56 @@ class Component extends LitElement {
     static get properties() {
         return {
             label: { type: String },
+            pagination: { type: Number },
             movies: { state: true, type: Array }
         }
     }
-   
+
     static styles = css`
-    .movie-list{
-        margin-left: 40px;
-      }
-      
-      
-      .cat-title{
-          margin: 15px;
-      }
-      
-      .category{
-          display: flex;
-          flex-direction: row;
-      }
+        div {
+            padding: 1rem;
+        }
+
+        h2 {
+            font-family: sans-serif;
+            font-size: 48px;
+        }
+
+        ul {
+            transition: transform 600ms;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            transform: translateX(0px);
+        }
     `
 
-    render() {
+    next() {
+        const totalPages = Math.ceil(this.movies.length / 7) - 1
+        const width = 400 * 7
+
+        const newPagination = this.pagination + 1
+        this.pagination = newPagination >= totalPages ? 0 : newPagination
+
+        const list = this.querySelector('ul')
+        list.style.transform = `translateX(-${newPagination * width}px)`
+    }
+
+    render() {    
         return html`
-        <h2 class="cat-title"> ${this.label} </h2>
-            <ul class="category">
+            <h2>${this.label}</h2>
+
+            <ul>
                 ${this.movies.map(({ name, image }) => {
                     return html`
-                        <li>
-                            <movie-preview  image="${image}" label="${name}"></movie-preview>
-                        </li>`
+                        <movie-preview image="${image}" label="${name}"></movie-preview>`
                 })}
             </ul>
+
+            <button @click="${this.next}">NEXT</button>
         `
-    };     
+    }
 }
 
-
-customElements.define('movie-list',Component);
+customElements.define('movies-list', MoviesList)

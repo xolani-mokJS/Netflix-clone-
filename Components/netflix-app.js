@@ -11,35 +11,36 @@ class Component extends LitElement {
 
     static get properties () {
         return {
+            phase: { type: String },
             movies: { type: Array }
         }
     }
+    
 
     movies = []
 
     render() {
         return html`
-            <movie-list .movies=${this.movies} label='Whats new..'></movie-list>
+            <movies-list .movies=${this.movies} label="Horror"></movies-list>
         `
     }
-
 
     connectedCallback() {
         super.connectedCallback();
 
         const init = async () => {
-                const response = await fetch('api\data.json')
-                
+            const response = await fetch('/api/data.json')
+            
             /** @type {{ data: import('./types').movie[] }} */
-          
             const { data } = await response.json()
 
             this.movies = data.slice(0, 30)
+            this.phase = 'resting'
         }
             
         init()
-    }  
-    
+    }
+
 }
 
 customElements.define('netflix-app', Component)
