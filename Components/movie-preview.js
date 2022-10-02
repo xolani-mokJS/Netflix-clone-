@@ -30,7 +30,6 @@ class MoviePreview extends LitElement {
     static styles = css`
         
         .show-cover{
-            /* background-image: url(/Images/queens-gambit.png); */
             background-size: cover;
             width: 240px;
             height: 140px;
@@ -45,7 +44,7 @@ class MoviePreview extends LitElement {
             top: -50%;
             left: -20%;
             width: 150%;
-            height: 100px;
+            height: 200%;
             background: #141414;
             color: white;
             border-radius: 4px;
@@ -57,6 +56,15 @@ class MoviePreview extends LitElement {
         
         .show-cover:hover > .hidden-items {
             display: block;
+            opacity: 1;
+        }
+
+        .movie-preview{
+            background: #141414;
+            margin: 5px;
+            display: flex;
+            flex-direction: column;
+            color: white;
         }
         
         .movie-name{
@@ -66,13 +74,13 @@ class MoviePreview extends LitElement {
         }
         
         .image{
+            height: 280px;
             width: 100%;
             border-radius: 4px;
         }
         
         .buttons-hidden{
             margin-left: 10px;
-            color: var(--bg-color);
             border: none;
             background-color: #ffffff;
             padding: 8px 12px;
@@ -86,6 +94,11 @@ class MoviePreview extends LitElement {
             opacity: 0.9;
         }
         
+        video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
     `
 
     render() {
