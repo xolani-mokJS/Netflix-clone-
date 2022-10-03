@@ -109,7 +109,7 @@ class MoviePreview extends LitElement {
         <div class="movie-preview">
             <div class="resting show-cover" style="${styleMap(backgroundStyle)}">
                 <div class="preview hidden-items">
-                    <img class="image" src="${this.image}" alt="${this.label}">
+                    <video src="/Images/trailer.mp4" loop></video>
                     <p class="movie-name">${this.label}</p>
                     <div class="hidden-buttons">
                         <button class="buttons-hidden">play</button>
