@@ -44,8 +44,13 @@ class MoviePreview extends LitElement {
             left: -20%;
             width: 150%;
             height: 200%;
-            background: #141414;
+            background-color: #141414;
             color: white;
+            border-radius: 4px;
+        }
+
+        .hidden-buttons{
+            background-color: #141414;
             border-radius: 4px;
         }
         
