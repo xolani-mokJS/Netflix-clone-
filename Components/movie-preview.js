@@ -24,6 +24,7 @@ class MoviePreview extends LitElement {
             label: { type: String },
             image: { type: String },
             wishlisted: { type: Boolean },
+            muted: { state: true, type: Boolean }
         }
     }
 
@@ -72,7 +73,8 @@ class MoviePreview extends LitElement {
         }
         
         .movie-name{
-           font-size: 16px;
+            padding: 10px;
+            font-size: 16px;
             padding-left: 15px;
             padding-top: 15px;
         }
@@ -99,24 +101,41 @@ class MoviePreview extends LitElement {
         }
         
         video {
-            width: 100%;
             height: 200px;
+            width: 100%;
             object-fit: cover;
         }
     `
+    
+    play() {
+        this.videoRef.value.play()
+    }
+
+    pause() {
+        this.videoRef.value.pause()
+    }
+
+    toggleMute() {
+        this.muted = !this.muted
+    }
+
 
     render() {
         const backgroundStyle = {
             backgroundImage: `url('${this.image}')`,
         }
+        const inlineStyle = styleMap(backgroundStyle)
 
         return html`
         <div class="movie-preview">
-            <div class="resting show-cover" style="${styleMap(backgroundStyle)}">
+            <div class="resting show-cover" style="${inlineStyle}" @mouseover="${this.play}"
+            @mouseout="${this.pause}">
                 <div class="preview hidden-items">
-                    <video src="/Images/trailer.mp4" loop></video>
-                    <p class="movie-name">${this.label}</p>
+                    <video ${ref(this.videoRef)}
+                    .muted=${this.muted} src="/Images/trailer.mp4" loop></video>
+                    <span class="movie-name">${this.label}</span>
                     <div class="hidden-buttons">
+                        <button class="buttons-hidden" @click="${this.toggleMute}">${this.muted ? 'Unmute' : 'Mute'}</button>
                         <button class="buttons-hidden">play</button>
                         <button class="buttons-hidden">Add to list</button>
                     </div> 
@@ -124,6 +143,12 @@ class MoviePreview extends LitElement {
             </div>
         </div>
         `
+    }
+
+    constructor() {
+        super()
+        this.muted = true
+        this.videoRef = createRef()
     }
 }
 

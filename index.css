@@ -270,6 +270,10 @@ p{
     position: relative;
 }
 
+.icons{
+    width: 16px;
+}
+
 .title-content{
     position: absolute;
     margin-top:40vh;
